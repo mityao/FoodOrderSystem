@@ -1,0 +1,26 @@
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/26/17 11:36 AM
+  -->
+
+<resources>
+    <string name="app_name">AL-BEK</string>
+    <string name="tab_sign_in">Sign In</string>
+    <string name="tab_sign_up">Sign Up</string>
+
+
+    <string name="open_drawer">open drawer</string>
+    <string name="close_drawer">close drawer</string>
+
+    <string name="search_title_hint">Not your city?</string>
+    <string name="search_hint">Not your city?</string>
+    <string name="search_title">search</string>
+    <string name="user_profile_picture">User profile picture</string>
+    <string name="nav_header_mobile">mityao@hotmail.com</string>
+    <string name="facebook_app_id">786295888201113</string>
+    <string name="fb_login_protocol_scheme">fb1832756210295590</string>
+    <string name="title_activity_maps">Map</string>
+
+
+</resources>

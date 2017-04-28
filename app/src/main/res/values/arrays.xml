@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/26/17 12:12 PM
+  -->
+
+<resources>
+    <string-array name="query_suggestions">
+        <item>delhi</item>
+        <item>dalian</item>
+        <item>dali</item>
+        <item>dubai</item>
+        <item>banglore</item>
+        <item>bingo</item>
+        <item>bridge</item>
+        <item>bandung</item>
+        <item>bandirma</item>
+        <item>bangkok</item>
+        <item>chicago</item>
+        <item>St Charles</item>
+        <item>houston</item>
+    </string-array>
+</resources>

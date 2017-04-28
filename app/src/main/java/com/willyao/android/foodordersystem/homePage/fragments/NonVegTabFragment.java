@@ -1,0 +1,143 @@
+/*
+ * Created by Will Yao on 04/13/17
+ * Copyright (c) 2017.  All rights reserved
+ * Last modified 4/21/17 4:50 PM
+ */
+
+package com.willyao.android.foodordersystem.homePage.fragments;
+
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.willyao.android.foodordersystem.R;
+import com.willyao.android.foodordersystem.homePage.HomePageActivity;
+import com.willyao.android.foodordersystem.homePage.adapters.NonVegAdapter;
+import com.willyao.android.foodordersystem.model.Food;
+import com.willyao.android.foodordersystem.utils.volley.VolleyController;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+/**
+ * Created by mitya on 4/18/2017.
+ */
+
+public class NonVegTabFragment extends Fragment {
+
+    private String NON_VEG_URL = "http://rjtmobile.com/ansari/fos/fosapp/fos_food.php?food_category=non-veg&city=";
+    private String TAG = "NonVegFragment";
+
+    ArrayList<Food> foods = new ArrayList<>();
+    NonVegAdapter adapter;
+    @BindView(R.id.recyclerview_nonveg) RecyclerView mRecyclerView;
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Request Data From Web Service
+        if (foods.size() == 0){
+            objRequestMethod();
+        }
+        View view = inflater.inflate(R.layout.fragment_non_veg_tab, container, false);
+        ButterKnife.bind(this, view);
+        adapter = new NonVegAdapter(getContext(), foods);
+        adapter.setOnItemClickListenser(new NonVegAdapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view, String data) {
+                //collect data of food and pass to foodDetail fragment
+                Bundle foodInfo = new Bundle();
+                for (int i=0; i<foods.size(); i++){
+                    if (foods.get(i).getfId() == Integer.valueOf(data)){
+                        foodInfo.putInt("foodId", foods.get(i).getfId());
+                        foodInfo.putString("foodName", foods.get(i).getfName());
+                        foodInfo.putString("foodCat", foods.get(i).getfCategory());
+                        foodInfo.putString("foodRec", foods.get(i).getfRecepiee());
+                        foodInfo.putDouble("foodPrice", foods.get(i).getfPrice());
+                        foodInfo.putString("foodImage", foods.get(i).getmImageUrl());
+                        Log.i(TAG, "imgurl= " + foods.get(i).getmImageUrl());
+                        Log.i(TAG, "category= " + foods.get(i).getfCategory());
+                    }
+                }
+                FoodDetailFragment foodDetailFragment = new FoodDetailFragment();
+                foodDetailFragment.setArguments(foodInfo);
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        //.setCustomAnimations(R.anim.fade_in, R.anim.fade_out, R.anim.fade_in, R.anim.fade_out)
+                        .replace(R.id.main_fragment_container, foodDetailFragment)
+                        .addToBackStack(NonVegTabFragment.class.getName())
+                        .commit();
+            }
+        });
+        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.setHasFixedSize(false);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        return view;
+    }
+
+    private void objRequestMethod() {
+        HomePageActivity.showPDialog();
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, buildUrl(), null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray foodsJsonArr = response.getJSONArray("Food");
+                            for (int i = 0; i < foodsJsonArr.length(); i++) {
+                                JSONObject object = foodsJsonArr.getJSONObject(i);
+                                String id = object.getString("FoodId");
+                                String name = object.getString("FoodName");
+                                String recepiee = object.getString("FoodRecepiee");
+                                String price = object.getString("FoodPrice");
+                                String thumb = object.getString("FoodThumb");
+                                final Food curFood = new Food();
+                                curFood.setfCategory("Non-Veg");
+                                curFood.setfName(name);
+                                curFood.setfRecepiee(recepiee);
+                                curFood.setfPrice(Double.valueOf(price));
+                                curFood.setmImageUrl(thumb);
+                                curFood.setfId(Integer.valueOf(id));
+                                foods.add(curFood);
+                                adapter.notifyData(foods);
+                                //ImageUtils.loadFoodImage(curFood, );
+                            }
+                            HomePageActivity.disPDialog();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "ERROR" + error.getMessage());
+                Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                HomePageActivity.disPDialog();
+            }
+        });
+        Log.i("URL", jsonObjectRequest.getUrl());
+        VolleyController.getmInstance().addToRequestQueue(jsonObjectRequest);
+    }
+
+    private String buildUrl() {
+        return NON_VEG_URL + HomePageActivity.City;
+    }
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/26/17 11:06 AM
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/menu_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/menu_profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/menu_history"
+            android:title="Order History" />
+        <item
+            android:id="@+id/nav_ambience"
+            android:icon="@drawable/menu_ambience"
+            android:title="Ambience" />
+        <item
+            android:id="@+id/nav_track"
+            android:icon="@drawable/menu_track"
+            android:title="Track" />
+    </group>
+
+    <item android:title="Contact Us">
+        <menu>
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/menu_help"
+                android:title="Contact Us" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/menu_logout"
+        android:title="Logout">
+    </item>
+</menu>

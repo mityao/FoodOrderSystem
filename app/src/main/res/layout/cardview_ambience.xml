@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/25/17 2:58 PM
+  -->
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        app:cardCornerRadius="8dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.547"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="350dp">
+            <ImageView
+                android:id="@+id/ambience_img"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/pic_id"
+                    tools:text="id"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+                <TextView
+                    android:id="@+id/pic_title"
+                    tools:text="city"
+                    android:textColor="@color/primary_text"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="@dimen/spacing_medium"
+                    android:layout_marginLeft="@dimen/spacing_small"
+                    android:drawableLeft="@drawable/menu_address"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>

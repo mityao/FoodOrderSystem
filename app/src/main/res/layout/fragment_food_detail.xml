@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/25/17 3:24 PM
+  -->
+
+<android.support.design.widget.CoordinatorLayout
+    android:background="@color/icons"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/food_detail_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:fitsSystemWindows="false">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/food_detail_collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@android:color/transparent"
+            app:expandedTitleMarginStart="@dimen/spacing_xlarge"
+            app:expandedTitleMarginEnd="@dimen/spacing_xxlarge"
+            app:collapsedTitleGravity="bottom"
+            app:expandedTitleMarginBottom="@dimen/spacing_medium"
+            android:fitsSystemWindows="true">
+
+            <ImageView
+                android:id="@+id/food_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mka"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax"/>
+            <!--<com.facebook.drawee.view.SimpleDraweeView-->
+                <!--android:id="@+id/food_detail_image"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--fresco:placeholderImage="@drawable/food_img_placeholder"-->
+                <!--fresco:placeholderImageScaleType="centerCrop"-->
+                <!--app:layout_collapseMode="parallax"/>-->
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/spacing_large"
+        android:layout_marginRight="@dimen/spacing_large"
+        android:minHeight="300dp"
+        android:paddingTop="20dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_marginRight="@dimen/spacing_small"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="0dp">
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="ID :"/>
+                <TextView
+                    android:id="@+id/food_detail_id"
+                    android:text="food id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp">
+                <TextView
+                    android:textStyle="bold|italic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/primary_text"
+                    android:text="Category :"/>
+                <TextView
+                    android:id="@+id/food_detail_category"
+                    android:text="Veg/ Non Veg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                android:textStyle="bold|italic"
+                android:textColor="@color/primary_text"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:text="Recipe:"/>
+            <TextView
+                android:id="@+id/food_detail_recipe"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:text="food recipe"/>
+            <TextView
+                android:id="@+id/food_detail_price"
+                android:textStyle="bold"
+                android:gravity="end"
+                android:textSize="26sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:drawableLeft="@drawable/price"
+                android:drawablePadding="@dimen/spacing_small"
+                android:layout_height="0dp"
+                android:text="300.00"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4"
+                android:gravity="bottom">
+
+                <Button
+                    android:id="@+id/food_detail_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xsmall"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="Add to Cart"
+                    android:textColor="@color/icons" />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_below="@id/food_detail_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="Rate your food"
+                        android:textSize="18sp"
+                        android:id="@+id/rat_text"
+                        android:layout_margin="@dimen/spacing_small"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold|italic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <RatingBar
+                        android:id="@+id/rat_bar"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:theme="@style/RatingBar"
+                        android:rating="3"
+                        android:stepSize="0.5"
+                        android:numStars="5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

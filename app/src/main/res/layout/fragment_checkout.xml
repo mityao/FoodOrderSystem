@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/25/17 11:51 AM
+  -->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:padding="@dimen/spacing_small"
+            android:background="@color/icons">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text="Order Name:"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Quantity:"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="@dimen/spacing_xsmall"
+                    android:text="Price:"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+        </TableLayout>
+        <View
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium" />
+
+        <View
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:background="@color/icons">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_medium"
+                android:drawableLeft="@drawable/totalcheckout"
+                android:drawablePadding="@dimen/spacing_small"
+                android:gravity="center_vertical"
+                android:text="Total: "
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/checkout_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/spacing_xsmall"
+                android:text="1000.00"
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
+        </RelativeLayout>
+
+        <View
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="@dimen/spacing_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="100dp"
+            card_view:cardCornerRadius="8dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/mobile"
+                        android:drawablePadding="@dimen/spacing_small"
+                        android:gravity="center_vertical"
+                        android:text="Phone:"
+                        android:paddingRight="@dimen/spacing_small"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/checkout_mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/horizontal_padding"
+                        android:padding="@dimen/spacing_small"
+                        android:text="6143136377"
+                        android:gravity="center_vertical"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/checkout_edit_mobile"
+                        android:src="@drawable/update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@android:color/darker_gray" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/spacing_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/addresscheckout"
+                        android:drawablePadding="@dimen/spacing_small"
+                        android:gravity="center_vertical"
+                        android:text="Deliver to:"
+                        android:paddingRight="@dimen/spacing_small"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/checkout_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/horizontal_padding"
+                        android:padding="@dimen/spacing_small"
+                        android:text="St Charles"
+                        android:gravity="center_vertical"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/checkout_edit_addr"
+                        android:src="@drawable/update"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:clickable="true"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/checkout_pay"
+                android:drawableLeft="@drawable/paycheckout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33"
+                android:text="PayPal"
+                android:textStyle="bold|italic"
+                android:layout_gravity="center_horizontal"
+                android:drawablePadding="@dimen/spacing_small"
+                android:textColor="@color/icons"
+                android:backgroundTint="@color/colorPrimary"/>
+
+            <Button
+                android:id="@+id/confirm_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33"
+                android:textColor="@color/icons"
+                android:textStyle="bold|italic"
+                android:backgroundTint="#1afa29"
+                android:layout_gravity="center_vertical"
+                android:text="Android Pay"
+                android:onClick="requestFullWallet" />
+
+            <Button
+                android:id="@+id/checkout_cancel"
+                android:text="Cancel"
+                android:textColor="@color/icons"
+                android:textStyle="bold|italic"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/cancelcheckout"
+                android:drawablePadding="@dimen/spacing_small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.33"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/wallet_button_holder"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
+
+</ScrollView>

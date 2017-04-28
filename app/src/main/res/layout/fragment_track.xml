@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/23/17 5:57 PM
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="@dimen/spacing_small"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Tracking: "
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:gravity="center_horizontal"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold|italic"
+                android:background="@drawable/badge_rec"
+                android:layout_weight="1.5"
+                android:textSize="18sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/track_edit_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Order number"
+                android:inputType="number" />
+
+            <ImageView
+                android:id="@+id/track_search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:src="@drawable/trackfragtrack" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_small"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:id="@+id/track_detail_blcok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_small"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/badge_rec"
+                    android:gravity="center_horizontal"
+                    android:text="Order NO: "
+                    android:textColor="@color/primary_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/track_id"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2.5"
+                    android:text="0000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_small"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/badge_rec"
+                    android:gravity="center_horizontal"
+                    android:text="Your Total $: "
+                    android:textColor="@color/primary_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/track_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2.5"
+                    android:text="0000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/spacing_small"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/badge_rec"
+                    android:gravity="center_horizontal"
+                    android:text="Order Date: "
+                    android:textColor="@color/primary_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/track_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2.5"
+                    android:text="04/23/2017"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/spacing_small"
+                    android:background="@drawable/badge_rec"
+                    android:text="Status"
+                    android:textColor="@color/primary_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic" />
+
+                <ImageView
+                    android:id="@+id/track_image_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="190dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/packing" />
+
+                <TextView
+                    android:id="@+id/track_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Packing"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="28sp"
+                    android:textStyle="bold|italic" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

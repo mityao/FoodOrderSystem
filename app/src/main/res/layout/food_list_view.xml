@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/25/17 12:59 AM
+  -->
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/food_img"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            fresco:placeholderImage="@drawable/food_img_placeholder"
+            fresco:placeholderImageScaleType="centerCrop" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/food_name"
+                android:drawableLeft="@drawable/food"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/spacing_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="food" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.253"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintHorizontal_bias="1.0">
+
+                <TextView
+                    android:id="@+id/food_category_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category:" />
+
+                <TextView
+                    android:id="@+id/food_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:text="Veg / Non Veg" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="48dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="16dp"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/food_price_final"
+                    android:layout_width="86dp"
+                    android:drawableLeft="@drawable/price"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Price: "
+                    android:textSize="16sp"
+                    android:layout_weight="0.08" />
+
+                <TextView
+                    android:id="@+id/food_price"
+                    android:layout_width="179dp"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

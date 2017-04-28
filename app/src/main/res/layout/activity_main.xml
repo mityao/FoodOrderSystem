@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/26/17 11:59 AM
+  -->
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:background="@drawable/indian_food"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.willyao.android.foodordersystem.homePage.HomePageActivity">
+
+    <include layout="@layout/app_bar_main" />
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        app:theme="@style/NavigationViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:itemIconTint="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer_menu" />
+</android.support.v4.widget.DrawerLayout>

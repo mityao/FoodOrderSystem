@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/23/17 2:27 PM
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:background="#ffffffff"
+    android:orientation="horizontal"
+    android:id="@+id/dialog_mobile">
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/dialog_tv_mobile"
+        android:text="New Number："
+        android:textStyle="bold|italic"/>
+
+    <EditText android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/dialog_et_mobile"
+        android:inputType="phone"
+        android:minWidth="100dip"/>
+</LinearLayout>

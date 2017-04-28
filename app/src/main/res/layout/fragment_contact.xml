@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/23/17 2:05 AM
+  -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/spacing_small"
+    android:layout_marginRight="@dimen/spacing_small"
+    android:layout_marginBottom="@dimen/spacing_medium"
+    app:cardCornerRadius="8dp">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:drawableLeft="@drawable/ic_phone_black_24dp"
+                    android:text="Call us:"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:padding="@dimen/spacing_small"
+                    android:textStyle="bold|italic"
+                    android:fontFamily="sans-serif-black"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="412-689-5349"
+                    android:layout_marginLeft="@dimen/spacing_medium"
+                    android:textStyle="italic"
+                    android:autoLink="phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <View
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:text="Email:"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:drawablePadding="@dimen/spacing_small"
+                android:padding="@dimen/spacing_small"
+                android:textStyle="bold|italic"
+                android:fontFamily="sans-serif-black"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/help_email_subject"
+                    android:hint="Subject"
+                    android:padding="@dimen/spacing_small"
+                    android:maxEms="200"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/help_email_content"
+                    android:gravity="top"
+                    android:padding="@dimen/spacing_small"
+                    android:hint="Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/help_email_send"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="sans-serif-black"
+        android:text="Send"
+        android:textColor="@color/icons" />
+
+</RelativeLayout>

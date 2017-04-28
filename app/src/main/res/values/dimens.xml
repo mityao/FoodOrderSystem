@@ -1,0 +1,43 @@
+<!--
+  ~ Created by Will Yao on 04/13/17
+  ~ Copyright (c) 2017.  All rights reserved
+  ~ Last modified 4/23/17 1:46 PM
+  -->
+
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="horizontal_padding">8dp</dimen>
+
+    <dimen name="spacing_xsmall">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium_small">12dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_xlarge">48dp</dimen>
+    <dimen name="spacing_xxlarge">64dp</dimen>
+
+    <dimen name="order_img_width">100dp</dimen>
+    <dimen name="order_img_height">100dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="nav_header_height">192dp</dimen>
+
+    <dimen name="shot_author_picture_size">48dp</dimen>
+    <dimen name="shot_author_picture_radius">24dp</dimen>
+
+    <dimen name="shot_action_icon_size">32dp</dimen>
+    <dimen name="shot_action_drawable_top_icon_padding">7dp</dimen>
+    <dimen name="list_shot_detail_bar_height">40dp</dimen>
+
+    <dimen name="loading_progress_bar_size">24dp</dimen>
+    <dimen name="loading_item_height">36dp</dimen>
+    <dimen name="activity_auth_progress_bar_height">2dp</dimen>
+    <dimen name="nav_headder_login_btn_margin_left">-8dp</dimen>
+    <dimen name="user_picture_jumbo_height">180dp</dimen>
+
+    <dimen name="user_info_text_size">18sp</dimen>
+
+</resources>
